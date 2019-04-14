@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F150B0E-39C0-4EF1-9841-F30067C8A1CA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Impactro</RootNamespace>
+    <AssemblyName>Impactro.Cobranca</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET2;IMPACTRO;VB6</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\Impactro.Cobranca.xml</DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bancos\136-UniCred.cs" />
+    <Compile Include="Bancos\Bancos.cs" />
+    <Compile Include="Bancos\001-BB.cs" />
+    <Compile Include="Bancos\021-Banestes.cs" />
+    <Compile Include="Bancos\027-BESC.cs" />
+    <Compile Include="Bancos\033-Banespa.cs" />
+    <Compile Include="Bancos\041-Banrisul.cs" />
+    <Compile Include="Bancos\104-Caixa.cs" />
+    <Compile Include="Bancos\399-HSBC.cs" />
+    <Compile Include="Bancos\409-Unibanco.cs" />
+    <Compile Include="Bancos\745-CitiBank.cs" />
+    <Compile Include="Bancos\347-Sudameris.cs" />
+    <Compile Include="Bancos\353-Santander.cs" />
+    <Compile Include="Bancos\356-Real.cs" />
+    <Compile Include="Bancos\389-Mercantil.cs" />
+    <Compile Include="Bancos\422-Safra.cs" />
+    <Compile Include="Bancos\151-NossaCaixa.cs" />
+    <Compile Include="Bancos\756-SICOOB.cs" />
+    <Compile Include="Bancos\237-Bradesco.cs" />
+    <Compile Include="Bancos\341-Itau.cs" />
+    <Compile Include="Bancos\047-Banese.cs" />
+    <Compile Include="Bancos\070-BRB.cs" />
+    <Compile Include="Bancos\748-Sicredi.cs" />
+    <Compile Include="Comum\BoletoLayout.cs" />
+    <Compile Include="Comum\BoletoNormal.cs" />
+    <Compile Include="Comum\BoletoCarne.cs" />
+    <Compile Include="Comum\Boleto.cs" />
+    <Compile Include="BoletoForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BoletoWeb.cs" />
+    <Compile Include="Comum\BoletoTextos.cs" />
+    <Compile Include="Comum\CedenteInfo.cs" />
+    <Compile Include="Comum\CobUtil_Calc.cs" />
+    <Compile Include="Comum\CSV.cs" />
+    <Compile Include="Comum\FieldDraw.cs" />
+    <Compile Include="Layout\BoletoItens.cs" />
+    <Compile Include="Layout\CNAB240\CNAB240Santander.cs" />
+    <Compile Include="Layout\CNAB240\CNAB240Caixa.cs" />
+    <Compile Include="Layout\CNAB240\CNAB240Sicoob.cs" />
+    <Compile Include="Layout\CNAB400\CNAB400Banestes.cs" />
+    <Compile Include="Layout\CNAB400\CNAB400BRB.cs" />
+    <Compile Include="Layout\CNAB400\CNAB400Sicredi.cs" />
+    <Compile Include="Layout\CNAB400\CNAB400BB.cs" />
+    <Compile Include="Layout\CNAB400\CNAB400Itau.cs" />
+    <Compile Include="Layout\CNAB400\CNAB400UniCred.cs" />
+    <Compile Include="Layout\LayoutBancos.cs" />
+    <Compile Include="Layout\CNAB240\CNAB240.cs" />
+    <Compile Include="Layout\CNAB.cs" />
+    <Compile Include="Layout\CNAB400\CNAB400.cs" />
+    <Compile Include="Layout\CNAB400\CNAB400Bradesco.cs" />
+    <Compile Include="Layout\CNAB400\CNAB400Santander.cs" />
+    <Compile Include="Layout\Layout.cs" />
+    <Compile Include="Layout\RegFormat.cs" />
+    <Compile Include="Layout\RegLayout.cs" />
+    <Compile Include="Layout\RegStruct.cs" />
+    <Compile Include="Layout\RegT.cs" />
+    <Compile Include="Comum\SacadoInfo.cs" />
+    <Compile Include="Comum\BoletoInfo.cs" />
+    <Compile Include="Layout\RPS.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Comum\CobUtil.cs" />
+    <Compile Include="Comum\TesteNET.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BoletoWeb.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\136.gif" />
+    <EmbeddedResource Include="Resources\027.gif" />
+    <None Include="mpc.pfx" />
+    <EmbeddedResource Include="Resources\389.gif" />
+    <EmbeddedResource Include="BoletoForm.bmp" />
+    <Content Include="Cobranca.txt" />
+    <EmbeddedResource Include="Resources\756.gif" />
+    <EmbeddedResource Include="Resources\070.gif" />
+    <EmbeddedResource Include="Resources\353.gif" />
+    <EmbeddedResource Include="Resources\047.gif" />
+    <EmbeddedResource Include="Resources\422.gif" />
+    <EmbeddedResource Include="Resources\745.gif" />
+    <EmbeddedResource Include="Resources\b.gif" />
+    <EmbeddedResource Include="Resources\p.gif" />
+    <EmbeddedResource Include="Resources\001.gif">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\021.gif" />
+    <EmbeddedResource Include="Resources\033.gif" />
+    <EmbeddedResource Include="Resources\041.gif" />
+    <EmbeddedResource Include="Resources\104.gif" />
+    <EmbeddedResource Include="Resources\151.gif" />
+    <EmbeddedResource Include="Resources\237.gif" />
+    <EmbeddedResource Include="Resources\341.gif" />
+    <EmbeddedResource Include="Resources\347.gif" />
+    <EmbeddedResource Include="Resources\356.gif" />
+    <EmbeddedResource Include="Resources\399.gif" />
+    <EmbeddedResource Include="Resources\409.gif" />
+    <EmbeddedResource Include="Resources\748.gif" />
+    <EmbeddedResource Include="Resources\corte.gif" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

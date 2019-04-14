@@ -1,0 +1,6 @@
+E:\github-impactro\Impactro.Cobranca\bin\Debug\Impactro.Cobranca.xml
+E:\github-impactro\Impactro.Cobranca\bin\Debug\Impactro.Cobranca.dll
+E:\github-impactro\Impactro.Cobranca\bin\Debug\Impactro.Cobranca.pdb
+E:\github-impactro\Impactro.Cobranca\obj\Debug\Cobranca.csproj.CoreCompileInputs.cache
+E:\github-impactro\Impactro.Cobranca\obj\Debug\Impactro.Cobranca.dll
+E:\github-impactro\Impactro.Cobranca\obj\Debug\Impactro.Cobranca.pdb

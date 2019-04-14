@@ -1,0 +1,147 @@
+Impactro.Cobranca
+=================
+
+O componente está estruturado da seguinte forma:
+
+1 Classe principal reune todas as informações e calcula tudo: Boleto
+2 Classes de renderização: BoletoForm para Windows Form e BoletoWeb para ASP.Net
+20 classes específicas para cada algoritimo de banco.
+3 classes de estrutura das informações: CedenteInfo, SacadoInfo, BoletoInfo
+1 classe utilitária com as rotinas basicas que são usadas em diversas partes do código: CobUtil
+2 classes de pagamento para cartão de credito: RedeCard e Cielo
+1 classe de processamento de retorno de cobrança para arquivos CNAB240: RetornoCobranca
+
+A classe CedenteInfo é a cofiguração do Cedente que geralmente é fixa
+A classe SacadoInfo a contem as informações de um cliente ao qual o boleto será atribuido
+A classe BoletoInfo tem as caracteristicas do boleto que o Sacado deve pagar ao Cedente.
+
+Assim com apenas 3 tabelas relacionais em um banco de dados você pode ter um sistema simples e completo para administrar suas cobranças: cadastro de cedentes, cadastro de sacados, cadastro de cobranças.
+
+Histórico de Alterações
+Versão.Ano.Mes.Dia
+==================
+2.7.7.12 - Inicio da Nova versão Impactro Cobrança, antiga mpcDotNet
+	Boleto & Bancos
+		Adicionadas
+	Util
+		Adcionada e Adaptada
+
+2.7.7.14
+	BoletoWeb & BoletoForm
+		Adicionadas
+	Visa
+		Criada Classe de comunicação com o VisaNet
+
+2.7.7.27
+	Visa
+		Criada uma função de Captura/Cancel + Obtenção de resultados para retorno de informações padrão
+
+2.7.8.9
+	BoletoWeb
+		Embutido todas as imagens no BoletoWeb em formato Gif para ser usado como WebResource, dispensando o uso de imagens dos bancos em cada aplicativo
+
+2.7.12.27
+	BoletoWeb, Boleto, Infos
+		Criado campos para controle dos itens manualmente calculados pelos caixas
+		Valorcobrado, Outras Deduções, Acrescimos, MoraMulta
+		
+2.8.3.16
+	Classe Utl, renimeada para CobUtil
+	
+2.8.7.28
+	Adicionados controle para Avalista, Uso Banco e CIP
+	
+2.8.8.4
+	Descoberto site open-source de boleto: http://www.codeplex.com/boletonet
+	Referencia de documentação na WikPedia: http://pt.wikipedia.org/wiki/Boleto_de_cobran%C3%A7a
+
+2.8.9.3
+	RetornoCobranca
+		Melhorada a rotina de tratamento de retorno padrão CNAB 240
+
+2.8.12.12
+	VisaNet, renomeado (antes era Visa)
+	RedeCard
+		Nova classe de metodos para pagamento MasterCard
+	Boleto
+		variável 'Sacador_Avalista' pode ser alterada com o testo de "Sacador/Avalista"
+
+2.9.2.15
+	Banco_do_Brasil
+		Ajuste para convenio de 7 digitos com nosso numero de 17 posições
+
+2.9.3.15
+	HSBC
+		Ajustes para a nova homologação CNR
+		
+2.9.3.26
+	Caixa
+		Nova carteira SIGCB
+	BoletoForm / BoletoWeb
+		Ajustes na renderização
+
+2.9.4.2
+	Bradesco
+		Modalidade com 2 ou 4 digitos implementada
+
+2.9.7.7
+	Banco do Brasil
+		Ajuste do Digito X
+
+2.9.7.28
+	Banese
+		Novo Banco implementado
+2.9.8.29
+	BRB - Banco de Brasilia
+		Novo Banco implementado
+
+2.10.1.8
+	Adicionado verificações dos campos obrigatórios!
+
+2.10.1.16
+	Alterado SacadoID e CedenteID, para SacadoCOD e CedenteCOD tipo String!
+	E no BoletoWeb impresso o código do Sacaco quando é diferente ze "" (branco)
+	Adicionada propriedade "ExibeReciboIPTE" para exibir o IPTE também no recibo do Sacado
+
+2.10.5.10
+	Criado um gateway via webservices para a execução do CodVer.exe
+	wsCodVer.asmx => Fornecido gratuitamente nos exemplos
+	CodVerPath = pode apontar para o endereço absoluto do webservice (Ex:"http://visa.impactro.net/wsCodVer.asmx")
+	
+2.10.7.21
+	Adicionado Banco 756-SICOOB
+	BoletoInfo / BoletoWeb = criado local para exibição das parcelas
+
+2.10.9.18
+	MIGRAÇÃO VISUAL STUDIO 2010 - >Net 3.5
+
+2.10.12.7
+	Integração Banco Mercantil 389
+
+2.11.6.17
+	Cedente
+		useSantander transferido da classe BancoBanespa para dentro das informações do Cedente
+	BoletoVB6
+		Recompilado e ajustada as propriedades
+
+2.12.X
+	Várias alterações para primeiras gerações de modelos de Remessa e Retorno de arquivos CNAB
+
+2.12.9.3
+	Restruturado os diretórios dos fontes para uma melhor compreenção
+
+2.12.9.9
+	Validação de arquivo de remessa do SICREDI
+	Reconhecimento de Retorno de NFe
+
+2.13.11.20
+	FIM DA IMPACTRO COBRANÇA
+	Este componente será descontinuado com o intuito de dividi-lo em outros menores
+
+----
+Não consegui quebrar em itens menores
+Implementei várias novos bancos, arquivos de remessa e retorno, e mudei o render Windows Form
+----
+
+2.15.10.14
+	Inserção do Banco 091 UniCred
