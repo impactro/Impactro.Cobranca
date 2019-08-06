@@ -104,7 +104,12 @@ namespace Impactro.Cobranca
             Fields.Add(new FieldDraw(0, 9 + Height, "Local de Pagamento", blt.LocalPagamento, 129, 7, StringAlignment.Near, 0x0B));
             Fields.Add(new FieldDraw(129, 9 + Height, "Vencimento", blt.DataVencimento.ToString("dd/MM/yyyy")) { Linhas = 0x0F, Destaque = true });
 
-            Fields.Add(new FieldDraw(0, 16 + Height, BoletoTextos.Cedente, blt.Cedente, 129) { Align = StringAlignment.Near });
+            string cCNPJ = blt.CedenteDocumento;
+            if (cCNPJ != null && cCNPJ.Length == 14)
+                cCNPJ = cCNPJ.Substring(0, 2) + "." + cCNPJ.Substring(2, 3) + "." + cCNPJ.Substring(5, 3) + "/" + cCNPJ.Substring(8, 4) + "." + cCNPJ.Substring(12, 2);
+
+            Fields.Add(new FieldDraw(0, 16 + Height, BoletoTextos.Cedente, blt.Cedente, 96) { Align = StringAlignment.Near });
+            Fields.Add(new FieldDraw(96, 16 + Height, blt.CedenteDocumentoTipo, cCNPJ, 33));
             Fields.Add(new FieldDraw(129, 16 + Height, BoletoTextos.CedenteConta, blt.AgenciaConta) { Linhas = 0x07 });
 
             Fields.Add(new FieldDraw(0, 23 + Height, "Data Documento", blt.DataDocumento.ToString("dd/MM/yyyy"), 30));
@@ -142,7 +147,7 @@ namespace Impactro.Cobranca
                 " - " + blt.Cep + " - " + blt.UF, 169, 14, StringAlignment.Near, 0x0F));
 
             if (!string.IsNullOrEmpty(blt.Avalista))
-                Fields.Add(new FieldDraw(79, 79 + Height, BoletoTextos.Avalista, blt.Avalista, 79, 7, StringAlignment.Near, 0));
+                Fields.Add(new FieldDraw(100, 79 + Height, BoletoTextos.Avalista, blt.Avalista, 100, 7, StringAlignment.Near, 0));
 
             Fields.Add(new FieldDraw(114, 86 + Height, "Autenticação Mecânica / Ficha de compensação", null) { Linhas = 0x00 });
 
